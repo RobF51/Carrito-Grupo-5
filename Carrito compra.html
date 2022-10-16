@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Carrito</title>
+	<script src="CarritoJS.js"> </script>
+
+</head>
+<body>
+	<h1> Carrito </h1>
+	<form name= "formulario">
+        Nombre artículo: <input type="text" name="nombreArt" placeholder="articulo" autofocus/> <span id="nombreError"></span>
+        <br/>
+        <br/>
+        Precio artículo: <input type="text" name="precioArt" /><span name="precioError"></span>
+        <br/>
+        <br/>
+        Unidades: <input type="text" name="udsArt" />
+        <br/>
+        <br/>
+        <input type="button" name="anadirArt" value="Añadir al carrito"/>
+        <br/>
+        <br/>
+        Artículos en el carrito: <input type="number" name ="totalArt"/>
+        <br/>
+        <br/>
+        Precio total del carrito: <input type="number" name = "totalPrec"/>
+        <br/>
+        <br/>
+        Forma de pago: <select id ="formaPago">
+        	    <option value="seleccione">-Seleccione-</option>
+                <option value="tarjeta">Tarjeta</option>
+                <option value="efectivo">Efectivo</option>
+            </select>
+        <br/>
+        <br/>
+        <div id="capaTarjeta">
+        	Titular Tarjeta: <input type="text" name="titular"/> 
+        	<br/><br/>
+        	Número Tarjeta: <input type="text" name="numTarjeta"/>
+        	<br/><br/>
+        	CVV: <input type="text" name="cvv/">
+        	<br/><br/>
+        </div>
+        
+        <div id="capaEfectivo">
+            Importe Efectivo: <input type="text" name="importe"/>	
+            <br/><br/>
+        </div>    
+
+         Acepto las condiciones de compra <input type="checkbox" id="condiciones" value="Y" />
+        <br/>
+        <br/>
+        <input type="button" value="Imprimir" name="botonImprimir" />
+        <input type="reset" value="Restablecer" name="botonRestablecer" />
+    </form>
+</body>
+</html>
