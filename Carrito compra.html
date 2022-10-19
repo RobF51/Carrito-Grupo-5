@@ -10,6 +10,8 @@
 <body>
 	<h1> Carrito </h1>
 	<form name= "formulario">
+
+        <!--introduccion de lo nombres y precios de producto-->
         Nombre artículo: <input type="text" name="nombreArt" placeholder="articulo" autofocus/> <span id="nombreError"></span>
         <br/>
         <br/>
@@ -19,9 +21,14 @@
         Unidades: <input type="text" name="udsArt" />
         <br/>
         <br/>
+        <!--funcion de ON CLICK introducida en el html pero se pasara a CSS-->
+
         <input type="button" name="anadirArt" value="Añadir al carrito"/>
+     
         <br/>
         <br/>
+
+        <!--Compilacion de nombres de productos en carrito y precio (suma de articulos 1 a 1 nombres y precio)-->
         Artículos en el carrito: <input type="number" name ="totalArt"/>
         <br/>
         <br/>
@@ -54,6 +61,30 @@
         <br/>
         <input type="button" value="Imprimir" name="botonImprimir" />
         <input type="reset" value="Restablecer" name="botonRestablecer" />
+
+
+<br/>
+<br/>
+<br/>
+
+
+<!--este boton funciona, pero al clickarlo realiza la accion y automaticamente
+la pagina se recarga y se borra los cambios hechos. el problema puede que este en 
+el "on load" de la pagina o en la propia funcion de window/inicializar-->
+
+
+
+        <button onclick="addFoo()">Add foo</button>
+
+<textarea name="content" id="content" cols="30" rows="10"></textarea>
+
+
+
+
+
+
+
+
     </form>
 </body>
 </html>

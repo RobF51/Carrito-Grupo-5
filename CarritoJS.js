@@ -1,3 +1,8 @@
+//preguntar: esto no deberia ser con diccionario de datos? 
+//asi se almacena un "perfil" por cada producto y solo habria que
+//operar con nombre y precio a traves de bucles for
+
+
 var nombreArt;
 var precioArt;
 var udsArt;
@@ -14,36 +19,10 @@ var precioError;
 var articulo;
 var precio;
 
-function rellenarCarrito(){
+var sumaArticulos;
+var botonSumaArticulos;
 
-}
-
-function cargarPago(){
-	if(formaPago.value=="seleccione"){
-		capaTarjeta.style.display="none";
-        capaEfectivo.style.display="none";
-	}else if(formaPago.value=="tarjeta"){
-		capaTarjeta.style.display="block";
-		capaEfectivo.style.display="none";
-	}else{
-		capaTarjeta.style.display="none";
-		capaEfectivo.style.display="block";
-	}
-}
-
-function generarCarrito(){
-	var error=0;
-
-	if(nombreArt==""){
-		nombreError.textContent="falta artículo";error++;
-	}
-
-	if(precioArt==""){
-		precioError.textContent="falta precio";error++;
-	}
-
-	if(error==0) rellenarCarrito();
-}
+//inicializa todo
 
 function inicializar(){
 	nombreArt=document.formulario.nombreArt;
@@ -61,9 +40,18 @@ function inicializar(){
 	nombreError=document.getElementById.nombreError;
 	precioError=document.getElementById.precioError;
 
+	//preguntar si esto se inicializa desde principio
+	sumaArticulos=document.formulario.sumaArticulos;
+
 	capaTarjeta.style.display="none";
 	capaEfectivo.style.display="none";
+
+	//inicializacion del boton
+	botonSumaArticulos = document.getElementsByName("añadirArt")
+	botonSumaArticulos.addEventListener("click",rellenarCarrito)
 }
+
+
 
 function setManejadorEventos(){
 	formaPago.addEventListener("change",cargarPago);
@@ -74,4 +62,59 @@ window.onload=function(){
 	inicializar();
     setManejadorEventos();
 }
+
+
+
+
+//esta funcion concatena los nombres de producto (concatena strings)
+function rellenarCarrito(){
+	alert("el boton de rellenar carrito funciona");
+	
+		sumaArticulos= sumaArticulos+ nombreArt;
+		
+
+		console.log(sumaArticulos);
+	
+}
+
+//funcion escoger si se paga en efectivo o en tarjeta
+function cargarPago(){
+	if(formaPago.value=="seleccione"){
+		capaTarjeta.style.display="none";
+        capaEfectivo.style.display="none";
+	}else if(formaPago.value=="tarjeta"){
+		capaTarjeta.style.display="block";
+		capaEfectivo.style.display="none";
+	}else{
+		capaTarjeta.style.display="none";
+		capaEfectivo.style.display="block";
+	}
+}
+
+//funcion para identificar si nombre, precio y cantidad son validos
+function generarCarrito(){
+	var error=0;
+
+	if(nombreArt==""){
+		nombreError.textContent="falta artículo";error++;
+	}
+
+	if(precioArt==""){
+		precioError.textContent="falta precio";error++;
+	}
+
+	if(error==0) rellenarCarrito();
+}
+
+
+
+//boton de prueba (incidencia: la pagina refresca por cada accion que se hace (pulsar boton, etc))
+function addFoo(){
+	let ta = document.getElementById('content')
+	ta.value += 'foo \n\n'
+  }
+
+
+
+
 
