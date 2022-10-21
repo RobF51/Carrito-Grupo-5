@@ -1,8 +1,4 @@
-//preguntar: esto no deberia ser con diccionario de datos? 
-//asi se almacena un "perfil" por cada producto y solo habria que
-//operar con nombre y precio a traves de bucles for
-
-
+// Declaramos las variables que utilizaremos a lo largo del programa.
 var nombreArt;
 var precioArt;
 var udsArt;
@@ -19,10 +15,25 @@ var precioError;
 var articulo;
 var precio;
 
-var sumaArticulos;
-var botonSumaArticulos;
+var producto1;
+var producto2;
+var producto3;
+var precio1;
+var precio2;
+var precio3;
 
-//inicializa todo
+//Esta función nos informa del contenido del carrito y su precio total, plasmándolo 
+//en las etiquetas fichaProucto1 y fichaProducto2.
+
+function rellenarCarrito(){
+	suma=parseFloat(precio1)+parseFloat(precio2)+parseFloat(precio3);  
+    
+	fichaProducto1.textContent="Productos: " + producto1 +", "+ producto2 +", " +producto3 ;
+	fichaProducto2.textContent="Precio total: " +suma +" Euros";
+}
+
+
+//Esta función inicializa las variables
 
 function inicializar(){
 	nombreArt=document.formulario.nombreArt;
@@ -40,44 +51,61 @@ function inicializar(){
 	nombreError=document.getElementById.nombreError;
 	precioError=document.getElementById.precioError;
 
-	//preguntar si esto se inicializa desde principio
-	sumaArticulos=document.formulario.sumaArticulos;
+	producto1=document.formulario.producto1.value;
+	producto2=document.formulario.producto2.value;
+	producto3=document.formulario.producto3.value;
+	precio1=document.formulario.precio1.value;
+	precio2=document.formulario.precio2.value;
+	precio3=document.formulario.precio3.value;
+
 
 	capaTarjeta.style.display="none";
 	capaEfectivo.style.display="none";
 
-	//inicializacion del boton
-	botonSumaArticulos = document.getElementsByName("añadirArt")
-	botonSumaArticulos.addEventListener("click",rellenarCarrito)
 }
 
+//Esta función mete los productos dentro del carrito.
 
+function generarCarrito(){
+	inicializar();
+	var error=0;
+
+	if (producto1.length==0 || producto2.length==0 || producto3.length==0 || precio1.length==0 || precio2.length==0 || precio3.length==0){
+      errorProductos.textContent="Debe rellenar todos los campos";error++
+	}
+
+	if(error==0) rellenarCarrito();
+}
+
+//Esta función genera una ventana que nos informa de la cesta de la compra
+//solo en caso de haber seleccionado una forma de pago.
+
+function generarVentana(){
+	rellenarCarrito;
+	if(formaPago.value=="tarjeta" || formaPago.value=="efectivo" ){
+   alert("Productos: " + producto1 +", "+ producto2 +", " +producto3 + ". Precio total: " +suma +" Euros");
+    }else{
+    	alert("Seleccione forma de pago");
+    }
+
+}
+
+//Esta función pone a la escucha el menú "Forma de pago"
 
 function setManejadorEventos(){
 	formaPago.addEventListener("change",cargarPago);
-	anadirArt.addEventListener("click",generarCarrito);
 }
 
 window.onload=function(){
 	inicializar();
     setManejadorEventos();
+    document.formulario.boton.addEventListener("click", generarCarrito);
+    document.formulario.boton2.addEventListener("click", generarVentana);
+ 
 }
 
+//Esta función despliega las diferentes opciones del menú "forma de pago"
 
-
-
-//esta funcion concatena los nombres de producto (concatena strings)
-function rellenarCarrito(){
-	alert("el boton de rellenar carrito funciona");
-	
-		sumaArticulos= sumaArticulos+ nombreArt;
-		
-
-		console.log(sumaArticulos);
-	
-}
-
-//funcion escoger si se paga en efectivo o en tarjeta
 function cargarPago(){
 	if(formaPago.value=="seleccione"){
 		capaTarjeta.style.display="none";
@@ -91,28 +119,8 @@ function cargarPago(){
 	}
 }
 
-//funcion para identificar si nombre, precio y cantidad son validos
-function generarCarrito(){
-	var error=0;
-
-	if(nombreArt==""){
-		nombreError.textContent="falta artículo";error++;
-	}
-
-	if(precioArt==""){
-		precioError.textContent="falta precio";error++;
-	}
-
-	if(error==0) rellenarCarrito();
-}
 
 
-
-//boton de prueba (incidencia: la pagina refresca por cada accion que se hace (pulsar boton, etc))
-function addFoo(){
-	let ta = document.getElementById('content')
-	ta.value += 'foo \n\n'
-  }
 
 
 
