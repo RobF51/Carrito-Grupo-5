@@ -11,28 +11,27 @@
 	<h1> Carrito </h1>
 	<form name= "formulario">
 
-        <!--introduccion de lo nombres y precios de producto-->
-        Nombre artículo: <input type="text" name="nombreArt" placeholder="articulo" autofocus/> <span id="nombreError"></span>
-        <br/>
-        <br/>
-        Precio artículo: <input type="text" name="precioArt" /><span name="precioError"></span>
-        <br/>
-        <br/>
-        Unidades: <input type="text" name="udsArt" />
-        <br/>
-        <br/>
-        <!--funcion de ON CLICK introducida en el html pero se pasara a CSS-->
+    
+        
+        Productos: <input type="text" name="producto1"/>
+       <input type="text" name="producto2"/>
+         <input type="text" name="producto3"/>
+         </br>
 
-        <input type="button" name="anadirArt" value="Añadir al carrito"/>
-     
-        <br/>
-        <br/>
+           Precios: <input type="number" name="precio1"/>
+       <input type="number" name="precio2"/>
+         <input type="number" name="precio3"/>
+         <span id="errorProductos"></span>
+         <br/>
+      
+    
 
-        <!--Compilacion de nombres de productos en carrito y precio (suma de articulos 1 a 1 nombres y precio)-->
-        Artículos en el carrito: <input type="number" name ="totalArt"/>
+ <input type="button" value="Generar Lista" name="boton">
+
+        <div id="ficha">
+        <span id="fichaProducto1"></span>
         <br/>
-        <br/>
-        Precio total del carrito: <input type="number" name = "totalPrec"/>
+        <span id="fichaProducto2"></span>
         <br/>
         <br/>
         Forma de pago: <select id ="formaPago">
@@ -56,34 +55,13 @@
             <br/><br/>
         </div>    
 
-         Acepto las condiciones de compra <input type="checkbox" id="condiciones" value="Y" />
+        <input type="checkbox" value="1" name="condiciones" onclick="botonImprimir.disabled = !this.checked"> <label for="condiciones" > Acepto las condiciones de compra</label>
+    </div>
+
         <br/>
         <br/>
-        <input type="button" value="Imprimir" name="botonImprimir" />
+        <input type="button" value="Imprimir" name="boton2" id="botonImprimir" disabled />
         <input type="reset" value="Restablecer" name="botonRestablecer" />
-
-
-<br/>
-<br/>
-<br/>
-
-
-<!--este boton funciona, pero al clickarlo realiza la accion y automaticamente
-la pagina se recarga y se borra los cambios hechos. el problema puede que este en 
-el "on load" de la pagina o en la propia funcion de window/inicializar-->
-
-
-
-        <button onclick="addFoo()">Add foo</button>
-
-<textarea name="content" id="content" cols="30" rows="10"></textarea>
-
-
-
-
-
-
-
 
     </form>
 </body>
