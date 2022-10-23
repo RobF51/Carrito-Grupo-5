@@ -1,0 +1,255 @@
+.first-color { 
+	background: #394a51; 
+}
+	
+.second-color { 
+	background: #7fa99b; 
+}
+
+.third-color { 
+	background: #fbf2d5; 
+}
+
+.fourth-color { 
+	background: #fdc57b; 
+}
+
+body {
+    
+    background-image: url("img/pexels-ivan-samkov-7620774.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    background-repeat: no-repeat;
+    width: 100%;
+    
+    
+    
+}
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    background: #394a51d7; 
+    margin: 20px;
+    padding-left: 30px;
+    padding-bottom: 60px;
+    box-shadow: 4px 0px 8px 0px rgba(255, 255, 255, 0.39);
+    transition: 0.3s;
+    border-radius: 30px;
+}
+
+.column>input{
+
+    border-radius: 20px;
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 25px;
+   
+}
+
+
+.botonLista>input{
+
+    border-radius: 20px;
+    background-color: #bdaa93b4;  ;
+    border-color: #ececec;
+    color: #ffffff;
+}
+.botonLista>input:hover{
+    border-radius: 20px;
+    background-color: #fce2c0d3;  ;
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 4px 0px 8px 0px rgba(255, 255, 255, 0.39);
+}
+ 
+
+
+input{
+    width: 90%;
+    height: 40px;
+    font-size: 25px;
+  
+}
+
+
+aside{
+    background: #7fa99b; 
+    width: 100%;
+    height: 200px;
+}
+aside>p>input{
+    width: 40%;
+    margin: 20px;
+    height: 160px;
+    flex: 50%;
+    border-radius: 20px;
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 50px;
+
+}
+
+aside>p>input:hover{
+   
+   
+    border-color: #ffffff;
+    background-color: #fffdf7;
+    color: #444444ef; 
+
+    box-shadow: 6px 0px 10px 0px rgba(255, 255, 255, 0.39);
+}
+
+
+aside>p{
+    text-align: center;
+    margin:40px;
+    
+    
+}
+
+
+h1{
+    
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 100px;
+    color: #ececec; 
+    text-align: center;
+    background: #394a51; 
+   
+    border-radius: 30px;
+    
+    
+    
+}
+
+h2{
+    
+    
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 50px;
+    color: #ececec; 
+    
+    
+    
+}
+
+h3 {
+    
+    font-family:  "Lato", sans-serif;
+    color: #ececec; 
+    font-size: 35px;
+}
+
+#errorProductos{
+    
+    font-family:  "Source Sans Pro", sans-serif;
+    color: #d3d3d3fb; 
+    font-size: 35px;
+}
+
+
+
+.botonLista{
+    margin-top: 30px;
+    
+    
+}
+
+#fichaProducto1{
+    font-family:  "Source Sans Pro", sans-serif;
+    color: #d3d3d3fb; 
+    font-size: 35px;
+}
+
+#fichaProducto2{
+    font-family:  "Source Sans Pro", sans-serif;
+    color: #d3d3d3fb; 
+    font-size: 35px;
+}
+
+
+
+
+
+
+
+.escogpag{
+    display: flex;
+    justify-content: center;
+}
+
+.escogpag>select{
+    font-family:  "Source Sans Pro", sans-serif;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    font-size: 25px;
+    
+    border-radius: 20px;
+
+}
+
+.escogpag>select:hover{
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 4px 0px 8px 0px rgba(255, 255, 255, 0.39);
+    background-color: #91aab4;
+}
+
+#capaTarjeta{
+
+    
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 25px;
+    color: #ececec; 
+}
+
+#capaTarjeta>input{
+
+    border-radius: 20px;
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 25px;
+}
+
+#capaEfectivo{
+
+    
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 25px;
+    color: #ececec; 
+}
+
+#capaEfectivo>input{
+
+    border-radius: 20px;
+    font-family:  "Source Sans Pro", sans-serif;
+    font-size: 25px;
+}
+
+
+.columncond {
+    display: flex;
+    flex-direction: row;
+ 
+    background:#fbf2d58a;
+  
+   
+    transition: 0.3s;
+    border-radius: 30px;
+}
+.columncond>input {
+
+    width: 30px;
+    margin-left: 30%;
+    border-radius: 20px;
+}
+.columncond>label {
+    font-family:  "Source Sans Pro", sans-serif;
+    color:#292722; ;
+     font-size: 30px;
+     
+     margin-left: 20px;
+}

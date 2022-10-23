@@ -3,66 +3,135 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Carrito</title>
+	<title>Carrito de la compra Grupo 5</title>
 	<script src="CarritoJS.js"> </script>
+	<link rel="stylesheet" href="Carrito.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
 
+
+
+	
 </head>
 <body>
-	<h1> Carrito </h1>
+	<h1> Carrito de la compra </h1>
+
+	
 	<form name= "formulario">
+		<div class="row">
+		
+		
+		<div class="column">
 
-    
-        
-        Productos: <input type="text" name="producto1"/>
-       <input type="text" name="producto2"/>
-         <input type="text" name="producto3"/>
-         </br>
 
-           Precios: <input type="number" name="precio1"/>
-       <input type="number" name="precio2"/>
-         <input type="number" name="precio3"/>
-         <span id="errorProductos"></span>
-         <br/>
-      
-    
 
- <input type="button" value="Generar Lista" name="boton">
+		
+		<h2>Productos:</h2> 
+		<input type="text" name="producto1"/>
+		
+		
+	</br>
+	
+	<h2>Precios: </h2>
+	<input type="number" name="precio1"/>
+	
+	
+	<h2>Unidades: </h2>
+	<input type="number" name="unidades" value="1"/>
+	
+	
+	
+	<span id="errorProductos"></span>
+	<br/>
+	
+	<div class="botonLista">
 
-        <div id="ficha">
-        <span id="fichaProducto1"></span>
-        <br/>
-        <span id="fichaProducto2"></span>
-        <br/>
-        <br/>
-        Forma de pago: <select id ="formaPago">
-        	    <option value="seleccione">-Seleccione-</option>
-                <option value="tarjeta">Tarjeta</option>
-                <option value="efectivo">Efectivo</option>
-            </select>
-        <br/>
-        <br/>
-        <div id="capaTarjeta">
-        	Titular Tarjeta: <input type="text" name="titular"/> 
-        	<br/><br/>
-        	Número Tarjeta: <input type="text" name="numTarjeta"/>
-        	<br/><br/>
-        	CVV: <input type="text" name="cvv/">
-        	<br/><br/>
-        </div>
-        
-        <div id="capaEfectivo">
-            Importe Efectivo: <input type="text" name="importe"/>	
-            <br/><br/>
-        </div>    
+		<input type="button" value="Generar Lista" name="boton">
+	</div>
+	
+	
 
-        <input type="checkbox" value="1" name="condiciones" onclick="botonImprimir.disabled = !this.checked"> <label for="condiciones" > Acepto las condiciones de compra</label>
-    </div>
+	</div>
+	
+	<div class="column">
 
-        <br/>
-        <br/>
-        <input type="button" value="Imprimir" name="boton2" id="botonImprimir" disabled />
-        <input type="reset" value="Restablecer" name="botonRestablecer" />
 
-    </form>
+
+	<h2>Total:</h2>
+	
+	<div id="ficha">
+		<h3>Productos Totales: </h3>
+		<span id="fichaProducto1"></span>
+		<br/>
+		<h3>Precio Total: </h3>
+		<span id="fichaProducto2"></span>
+		<br/>
+		
+		<br/>
+	</div>
+	
+	<h2>Forma de pago:</h2> 
+
+	<div class="escogpag">
+
+		
+		
+
+		<select id ="formaPago">
+			<option value="seleccione">-Seleccione-</option>
+			<option value="tarjeta">Tarjeta</option>
+			<option value="efectivo">Efectivo</option>
+		</select>
+		<br/>
+		<br/>
+		<div id="capaTarjeta">
+			Titular Tarjeta: <input type="text" name="titular"/> 
+			<br/><br/>
+			Número Tarjeta: <input type="text" name="numTarjeta"/>
+			<br/><br/>
+			CVV: <input type="text" name="cvv/">
+			<br/><br/>
+		</div>
+		
+		<div id="capaEfectivo">
+			Importe Efectivo: <input type="number" name="importe"/>	
+			<br/><br/>
+		</div>
+
+
+	</div>
+	    
+	
+	
+</div>
+
+
+<br/>
+<br/>
+
+</div>
+<div class="columncond">
+
+<input type="checkbox" value="1" name="condiciones" onclick="botonImprimir.disabled = !this.checked"> 
+<br>
+<label for="condiciones" > Acepto las condiciones de compra</label>
+
+</div>
+
+
+<aside>
+
+<p>
+	<input type="button" value="Imprimir" name="boton2" id="botonImprimir" disabled />
+	<input type="reset" value="Restablecer" name="botonRestablecer" />
+</p>
+
+</aside>
+
+
+</form>
 </body>
 </html>
